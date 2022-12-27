@@ -585,13 +585,19 @@ UNIQUE INDEX `form_name` (`form_name`) USING BTREE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='form table that hold unique id of form and table name ';
 
 CREATE TABLE IF NOT EXISTS forms_details(
-`id` INT(11) NOT NULL AUTO_INCREMENT,
-`form_id` INT(11) NOT NULL,
-`element_id` INT(11) NOT NULL,
-`element_name` VARCHAR(100) NOT NULL,
-`element_type` VARCHAR(100) NOT NULL,
-PRIMARY KEY (`id`)
+id INT(11) NOT NULL AUTO_INCREMENT,
+form_id INT(11) NOT NULL,
+element_id INT(11) NOT NULL,
+element_name VARCHAR(100) NOT NULL,
+element_type VARCHAR(100) NOT NULL,
+is_required bit(1) NOT NULL DEFAULT b'0',
+PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='form details hold garcha';
+INSERT INTO forms_details (id, form_id, element_id,element_name, element_type, is_required) VALUES
+(1, 21, 1, 'नाम',1, 0),
+(2, 21, 2, 'ठेगाना', 1, 0),
+(3, 21, 3, 'ईमेल', 1, 0),
+(4, 21, 4, 'फोन', 1, 0);
 
 CREATE TABLE IF NOT EXISTS `element_type` (
 `type_id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1659,6 +1665,18 @@ CREATE TABLE IF NOT EXISTS `egovernance_advertisement_tax`(
 `element_data` VARCHAR(50) NOT NULL,
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_advertisement_tax';
+
+
+
+INSERT INTO egovernance_advertisement_tax (form_id, element_id,element_data, token_id) VALUES
+(1, 1, 'atul','LMC20220212123'),
+(1, 1, '98629363980','LMC20220212123'),
+(1, 9, 'atulpokharel12@gmail.com','LMC20220212123'),
+(2, 1, 'suraj','LMC20220212321456'),
+(2, 1, '98622222222','LMC20220212321456'),
+(2, 9, 'suraj.trent2555@gmail.com','LMC20220212321456');
+
+
 
 CREATE TABLE IF NOT EXISTS `egovernance_property_tax`(
 `form_id` INT NOT NULL ,

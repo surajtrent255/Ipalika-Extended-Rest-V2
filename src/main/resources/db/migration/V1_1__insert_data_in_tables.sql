@@ -151,3 +151,4 @@ INSERT INTO `element_type` (`type_id`, `type_name`) VALUES ('5', 'MULTI_TEXT');
 INSERT INTO `element_type` (`type_id`, `type_name`) VALUES ('6', 'DROPDOWN');
 INSERT INTO `element_type` (`type_id`, `type_name`) VALUES ('7', 'DISTRICT');
 INSERT INTO `element_type` (`type_id`, `type_name`) VALUES ('8', 'WARD');
+INSERT INTO `element_type` (`type_id`, `type_name`) VALUES ('9', 'EMAIL');
