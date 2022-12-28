@@ -34,19 +34,19 @@ public class AdvertisementTaxController {
 
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/advertisement/{formId}")
-    public ResponseDTO<List<AdvertisementTaxDTO>> getAdvertisementCertificateByTokenId(@PathVariable("formId") String formId)
+    @GetMapping("/advertisement/{tokenId}")
+    public ResponseDTO<List<AdvertisementTaxDTO>> getAdvertisementCertificateByTokenId(@PathVariable("tokenId") String tokenId)
             throws EntityNotFoundException {
-        return new ResponseDTO<List<AdvertisementTaxDTO>>(advertisementTaxService.getAdvertisementCertificateByTokenId(formId));
+        return new ResponseDTO<List<AdvertisementTaxDTO>>(advertisementTaxService.getAdvertisementCertificateByTokenId(tokenId));
     }
 
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/advertisement/{formId}")
-    public void updateAdvertisementCertificateByTokenId(@RequestBody List<AdvertisementTaxDTO> advertisementRegistrationInfo, @PathVariable("formId") String formId)
+    @PutMapping("/advertisement/{tokenId}")
+    public void updateAdvertisementCertificateByTokenId(@RequestBody List<AdvertisementTaxDTO> advertisementRegistrationInfo, @PathVariable("tokenId") String tokenId)
             throws CustomSqlException {
-        log.info("formId " + formId);
-        advertisementTaxService.updateAdvertisementCertificateByTokenId(advertisementRegistrationInfo, formId);
+        log.info("tokenId " + tokenId);
+        advertisementTaxService.updateAdvertisementCertificateByTokenId(advertisementRegistrationInfo, tokenId);
     }
 
 

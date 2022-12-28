@@ -168,7 +168,8 @@ CREATE TABLE IF NOT EXISTS status_level (
     PRIMARY KEY (type_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='verification status level';
 
-CREATE TABLE IF NOT EXISTS `egovernance_sanrakshyak_sasthagat_log`(
+CREATE TABLE IF NOT EXISTS `stander_log`(
+`form_id` int NOT NULL,
 `token_id` VARCHAR(50)  NOT NULL,
 `status` INT(11) NOT NULL,
 `status_1_by` VARCHAR(50) NOT NULL,
@@ -183,403 +184,14 @@ CREATE TABLE IF NOT EXISTS `egovernance_sanrakshyak_sasthagat_log`(
 `status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
 `status_6_by` VARCHAR(50) ,
 `status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_guardian_institutional_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_personal_detail_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_personal_detail_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_school_shifting_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_school_shifting_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_industry_shifting_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_industry_shifting_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_mohi_lagat_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_mohi_lagat_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_house_land_transfer_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_house_land_transfer_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_homeroad_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_homeroad_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_malpot_bhumikar_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_malpot_bhumikar_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_advertisement_tax_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_advertisement_tax_log_table';
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='stander form id ';
 
 
-INSERT INTO egovernance_advertisement_tax_log (token_id, status,status_1_by, status_1_in,status_2_by,status_2_in,status_3_by,status_3_in,status_4_by,status_4_in,status_5_by,status_5_in,status_6_by,status_6_in) VALUES
-('LMC20220212123',0,"suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23"),
-('LMC20220212321456',0,"joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23");
+INSERT INTO stander_log (form_id,token_id, status,status_1_by, status_1_in,status_2_by,status_2_in,status_3_by,status_3_in,status_4_by,status_4_in,status_5_by,status_5_in,status_6_by,status_6_in) VALUES
+(1,'LMC20220212123',0,"suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23"),
+(1,'LMC20220212321456',0,"joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23");
 
-CREATE TABLE IF NOT EXISTS `egovernance_property_tax_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_property_tax_log_table';
 
-CREATE TABLE IF NOT EXISTS `egovernance_reconciliation_paper_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_reconciliation_paper_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_char_killa_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_char_killa_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_institution_register_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_institution_register_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_free_healthcare_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_free_healthcare_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_land_register_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_land_register_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_school_operation_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_school_operation_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_internal_residence_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_internal_residence_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_court_fee_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_court_fee_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_business_closure_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_business_closure_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_angikrit_citizenship_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_angikrit_citizenship_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_citizenship_and_copy_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_citizenship_and_copy_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_resettlement_register_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_resettlement_register_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_business_register_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_business_register_log_table';
-
-CREATE TABLE IF NOT EXISTS `egovernance_quadruped_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_quadruped_log_table';
 
 CREATE TABLE IF NOT EXISTS forms_table(
 `form_id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -621,22 +233,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_birth_certificate`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_birth_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='birthcertificate_log';
+
 
 
 -- Dumping structure for table ipalika.egovernance_relationship_living
@@ -650,22 +247,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_relationship_living`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_relationship_living_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_relationship_living';
+
 
 
 
@@ -681,22 +263,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_relationship_deceased`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_relationship_deceased_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_relationship_deceased';
+
 
 
 -- Dumping structure for table ipalika.egovernance_marriage_certificate
@@ -710,22 +277,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_marriage_certificate`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_marriage_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_marriage_certificate_status_table';
+
 
 
 
@@ -740,22 +292,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_death_certificate`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_marriage_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_death_certificate_status_table';
+
 
 
 
@@ -771,22 +308,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_divorce_certificate`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_divorce_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_divorce_certificate_status_table';
+
 
 -- Dumping structure for table ipalika.egovernance_disabled_certificate
 
@@ -799,22 +321,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_disabled_certificate`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_disabled_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_disabled_certificate_status_table';
+
 
 
 
@@ -830,22 +337,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_marriage_verification`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_marriage_verification_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_marriage_verification_table';
+
 
 
 
@@ -860,22 +352,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_marriage_verification`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_marriage_verification_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_marriage_verification_table';
+
 
 
 -- Dumping structure for table ipalika.egovernance_alive_certificate
@@ -889,22 +366,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_alive_certificate`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_alive_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_alive_certificate_table';
+
 
 
 
@@ -919,22 +381,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_minor_certificate`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_minor_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_minor_certificate_table';
 
 -- Dumping structure for table ipalika.egovernance_scholarship_certificate
 
@@ -945,22 +391,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_scholarship_certificate`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_scholarship_certificate';
 
-CREATE TABLE IF NOT EXISTS `egovernance_scholarship_certificate_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_scholarship_certificate_table';
+
 
 -- Dumping structure for table ipalika.egovernance_birth_verification
 
@@ -971,22 +402,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_birth_verification`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_birth_verification';
 
-CREATE TABLE IF NOT EXISTS `egovernance_birth_verification_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_birth_verification_table';
 
 -- Dumping structure for table ipalika.egovernance_permanent_residence
 
@@ -997,22 +412,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_permanent_residence`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_permanent_residence';
 
-CREATE TABLE IF NOT EXISTS `egovernance_permanent_residence_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_permanent_residence_table';
+
 
 -- Dumping structure for table ipalika.egovernance_pipeline_connection
 
@@ -1023,22 +423,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_pipeline_connection`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_pipeline_connection';
 
-CREATE TABLE IF NOT EXISTS `egovernance_pipeline_connection_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_pipeline_connection_table';
 
 -- Dumping structure for table ipalika.egovernance_land_marking
 
@@ -1049,22 +433,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_land_marking`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_land_marking';
 
-CREATE TABLE IF NOT EXISTS `egovernance_land_marking_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_land_marking_table';
+
 
 
 
@@ -1079,22 +448,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_bahal_tax`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_bahal_tax_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_bahal_tax_table';
+
 
 
 
@@ -1107,22 +461,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_house_building`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_house_building';
 
-CREATE TABLE IF NOT EXISTS `egovernance_house_building_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_house_building_table';
+
 
 
 -- Dumping structure for table ipalika.egovernance_ghar_kayam
@@ -1134,22 +473,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_ghar_kayam`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_ghar_kayam';
 
-CREATE TABLE IF NOT EXISTS `egovernance_ghar_kayam_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_ghar_kayam_table';
 
 
 
@@ -1165,22 +488,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_poor_economy`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_poor_economy_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_poor_economy_table';
+
 
 
 -- Dumping structure for table ipalika.egovernance_english_verification
@@ -1194,22 +502,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_english_verification`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_english_verification_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_english_verification_table';
+
 
 -- Dumping structure for table ipalika.egovernance_manjurinama_verification
 
@@ -1219,33 +512,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_manjurinama_verification`(
 `element_data` VARCHAR(50) NOT NULL,
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_manjurinama_verification';
-
-
-
-CREATE TABLE IF NOT EXISTS `egovernance_manjurinama_verification_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_manjurinama_verification_table';
-
-
-
-
-
-
-
-
 
 
 
@@ -1262,27 +528,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_ghar_patal`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_ghar_patal';
 
 
-
-CREATE TABLE IF NOT EXISTS `egovernance_ghar_patal_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_ghar_patal_table';
-
-
-
-
 -- Dumping structure for table ipalika.egovernance_strong_economy
 
 CREATE TABLE IF NOT EXISTS `egovernance_strong_economy`(
@@ -1291,27 +536,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_strong_economy`(
 `element_data` VARCHAR(50) NOT NULL,
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_strong_economy';
-
-
-
-CREATE TABLE IF NOT EXISTS `egovernance_strong_economy_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_strong_economy_table';
-
-
 
 
 
@@ -1326,27 +550,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_electricity_connection`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_electricity_connection_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_electricity_connection_table';
-
-
-
-
-
 -- Dumping structure for table ipalika.egovernance_two_names
 
 CREATE TABLE IF NOT EXISTS `egovernance_two_names`(
@@ -1355,26 +558,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_two_names`(
 `element_data` VARCHAR(50) NOT NULL,
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_two_names';
-
-
-
-CREATE TABLE IF NOT EXISTS `egovernance_two_names_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_two_names_table';
-
 
 
 
@@ -1389,22 +572,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_land_valuation`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_land_valuation_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_land_valuation_table';
+
 
 
 
@@ -1420,22 +588,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_business_not_operating`(
 
 
 
-CREATE TABLE IF NOT EXISTS `egovernance_business_not_operating_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_business_not_operating_table';
+
 
 
 
@@ -1450,27 +603,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_land_dhanipurja`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_land_dhanipurja';
 
 
-
-CREATE TABLE IF NOT EXISTS `egovernance_land_dhanipurja_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_land_dhanipurja_table';
-
-
-
-
 -- Dumping structure for table ipalika.egovernance_rightful_person
 
 CREATE TABLE IF NOT EXISTS `egovernance_rightful_person`(
@@ -1479,27 +611,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_rightful_person`(
 `element_data` VARCHAR(50) NOT NULL,
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_rightful_person';
-
-
-
-CREATE TABLE IF NOT EXISTS `egovernance_rightful_person_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_rightful_person_table';
-
-
 
 
 -- Dumping structure for table ipalika.egovernance_details_disclosure
@@ -1511,25 +622,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_details_disclosure`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_details_disclosure';
 
-
-
-CREATE TABLE IF NOT EXISTS `egovernance_details_disclosure_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_details_disclosure_table';
-
 -- Dumping structure for table ipalika.egovernance_kotha_kholna_karya
 
 CREATE TABLE IF NOT EXISTS `egovernance_kotha_kholna_karya`(
@@ -1539,22 +631,7 @@ CREATE TABLE IF NOT EXISTS `egovernance_kotha_kholna_karya`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_kotha_kholna_karya';
 
-CREATE TABLE IF NOT EXISTS `egovernance_kotha_kholna_karya_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_kotha_kholna_karya_table';
+
 
 -- Dumping structure for table ipalika.egovernance_bato_kayam
 
@@ -1565,23 +642,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_bato_kayam`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_bato_kayam';
 
-CREATE TABLE IF NOT EXISTS `egovernance_bato_kayam_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_bato_kayam_table';
-
 -- Dumping structure for table ipalika.egovernance_sanrakshyak_byaktigat
 
 CREATE TABLE IF NOT EXISTS `egovernance_sanrakshyak_byaktigat`(
@@ -1591,22 +651,6 @@ CREATE TABLE IF NOT EXISTS `egovernance_sanrakshyak_byaktigat`(
 `token_id` VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_sanrakshyak_byaktigat';
 
-CREATE TABLE IF NOT EXISTS `egovernance_sanrakshyak_byaktigat_log`(
-`token_id` VARCHAR(50)  NOT NULL,
-`status` INT(11) NOT NULL,
-`status_1_by` VARCHAR(50) NOT NULL,
-`status_1_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_2_by` VARCHAR(50) NOT NULL,
-`status_2_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_3_by` VARCHAR(50) NOT NULL,
-`status_3_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_4_by` VARCHAR(50) NOT NULL,
-`status_4_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_5_by` VARCHAR(50) NOT NULL,
-`status_5_in` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(),
-`status_6_by` VARCHAR(50) ,
-`status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_sanrakshyak_byaktigat_table';
 
 CREATE TABLE IF NOT EXISTS `egovernance_sanrakshyak_sasthagat`(
 `form_id` INT NOT NULL ,
@@ -1677,9 +721,9 @@ INSERT INTO egovernance_advertisement_tax (form_id, element_id,element_data, tok
 (1, 1, 'atul','LMC20220212123'),
 (1, 1, '98629363980','LMC20220212123'),
 (1, 9, 'atulpokharel12@gmail.com','LMC20220212123'),
-(2, 1, 'suraj','LMC20220212321456'),
-(2, 1, '98622222222','LMC20220212321456'),
-(2, 9, 'suraj.trent2555@gmail.com','LMC20220212321456');
+(1, 1, 'suraj','LMC20220212321456'),
+(1, 1, '98622222222','LMC20220212321456'),
+(1, 9, 'suraj.trent2555@gmail.com','LMC20220212321456');
 
 
 

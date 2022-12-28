@@ -25,14 +25,14 @@ public interface AdvertisementTaxDAO extends CommonDAO{
         updateRegistrationReportForm(1, FormInfoUtil.ADVERTISEMENT_TAX.getFormId());
     }
 
-    @SqlQuery("SELECT * FROM egovernance_advertisement_tax WHERE form_id = :formId")
+    @SqlQuery("SELECT * FROM egovernance_advertisement_tax WHERE token_id = :tokenId")
     @RegisterBeanMapper(AdvertisementTaxDTO.class)
-    List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(@Bind("formId") String formId);
+    List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(@Bind("tokenId") String tokenId);
 
     @SqlBatch("UPDATE egovernance_advertisement_tax SET   element_data =:elementData WHERE form_id =:formId and element_id =:elementId and token_id =:tokenId" )
-    void updateAdvertisementRegistrationByTokenId(@BindBean List<AdvertisementTaxDTO> advertisementRegistrationInfo, @Bind("formId") String formId);
+    void updateAdvertisementRegistrationByTokenId(@BindBean List<AdvertisementTaxDTO> advertisementRegistrationInfo, @Bind("tokenId") String tokenId);
 
-    @SqlUpdate("UPDATE egovernance_advertisement_tax_log SET status = 1 WHERE token_id =:tokenId")
+    @SqlUpdate("UPDATE stander_log SET status = 1 WHERE token_id =:tokenId")
     void approveAdvertisementRegistration(@Bind("tokenId") String tokenId);
 
     @SqlUpdate("UPDATE egovernance_advertisement_tax_log SET status =:status WHERE token_id =:tokenId")

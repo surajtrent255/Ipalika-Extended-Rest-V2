@@ -14,9 +14,9 @@ public interface AdvertisementTaxService {
 
     List<AdvertisementTaxDTO> getAdvertisementRegistrations(HttpServletRequest request);
 
-    List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(String formId);
+    List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(String tokenId);
 
-    void updateAdvertisementCertificateByTokenId(List<AdvertisementTaxDTO> advertisementRegistrationInfo, String formId);
+    void updateAdvertisementCertificateByTokenId(List<AdvertisementTaxDTO> advertisementRegistrationInfo, String tokenId);
 
     void updateCertificateStatus(String formId, Integer status, Integer formInfoId);
 

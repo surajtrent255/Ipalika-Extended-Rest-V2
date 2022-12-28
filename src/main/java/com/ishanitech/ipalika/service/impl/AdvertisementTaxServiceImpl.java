@@ -75,10 +75,10 @@ public class AdvertisementTaxServiceImpl implements AdvertisementTaxService {
 
 
     @Override
-    public List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(String formId) {
+    public List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(String tokenId) {
         List<AdvertisementTaxDTO> advertisementInfo ;
 //    = (List<AdvertisementTaxDTO>) new AdvertisementTaxDTO() error class java loader
-        advertisementInfo = dbService.getDao(AdvertisementTaxDAO.class).getAdvertisementCertificateByTokenId(formId);
+        advertisementInfo = dbService.getDao(AdvertisementTaxDAO.class).getAdvertisementCertificateByTokenId(tokenId);
         return advertisementInfo;
     }
 
