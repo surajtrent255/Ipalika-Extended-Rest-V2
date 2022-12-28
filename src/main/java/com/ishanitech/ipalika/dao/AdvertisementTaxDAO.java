@@ -5,6 +5,7 @@ import com.ishanitech.ipalika.utils.FormInfoUtil;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
+import org.jdbi.v3.sqlobject.statement.SqlBatch;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.transaction.Transaction;
@@ -16,11 +17,11 @@ public interface AdvertisementTaxDAO extends CommonDAO{
     @RegisterBeanMapper(AdvertisementTaxDTO.class)
     List<AdvertisementTaxDTO> getAdvertisementRegistrations();
 
-    @SqlUpdate("INSERT INTO egovernance_advertisement_tax (form_id,element_id,element_data,token_id) VALUES(:formId, :elementId, :elementData, :tokenId,)")
-    void addAdvertisementRegistration(@BindBean AdvertisementTaxDTO advertisementRegistrationInfo);
+    @SqlBatch("INSERT INTO egovernance_advertisement_tax (form_id, element_id,element_data, token_id) VALUES(:formId, :elementId, :elementData,:tokenId)")
+    void addAdvertisementRegistration(@BindBean List<AdvertisementTaxDTO> advertisementRegistrationInfo);
     @Transaction
-    default void addNewEntity(AdvertisementTaxDTO advertisementRegistrationInfo) {
-        addAdvertisementRegistration(advertisementRegistrationInfo);
+    default void addNewEntity(List<AdvertisementTaxDTO> advertisementRegistrationInfo) {
+         addAdvertisementRegistration(advertisementRegistrationInfo);
         updateRegistrationReportForm(1, FormInfoUtil.ADVERTISEMENT_TAX.getFormId());
     }
 
@@ -28,10 +29,10 @@ public interface AdvertisementTaxDAO extends CommonDAO{
     @RegisterBeanMapper(AdvertisementTaxDTO.class)
     List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(@Bind("formId") String formId);
 
-    @SqlUpdate("UPDATE egovernance_advertisement_tax SET form_id =:formId, element_id =:elementId, element_data =:elementName WHERE token_id =:tokenId" )
-    void updateAdvertisementRegistrationByTokenId(@BindBean AdvertisementTaxDTO advertisementRegistrationInfo, @Bind("tokenId") String tokenId);
+    @SqlBatch("UPDATE egovernance_advertisement_tax SET   element_data =:elementData WHERE form_id =:formId and element_id =:elementId and token_id =:tokenId" )
+    void updateAdvertisementRegistrationByTokenId(@BindBean List<AdvertisementTaxDTO> advertisementRegistrationInfo, @Bind("formId") String formId);
 
-    @SqlUpdate("UPDATE egovernance_advertisement_tax_log SET approved = 1 WHERE token_id =:tokenId")
+    @SqlUpdate("UPDATE egovernance_advertisement_tax_log SET status = 1 WHERE token_id =:tokenId")
     void approveAdvertisementRegistration(@Bind("tokenId") String tokenId);
 
     @SqlUpdate("UPDATE egovernance_advertisement_tax_log SET status =:status WHERE token_id =:tokenId")

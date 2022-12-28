@@ -42,18 +42,18 @@ public class AdvertisementTaxController {
 
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/advertisement/{tokenId}")
-    public void updateAdvertisementCertificateByTokenId(@RequestBody AdvertisementTaxDTO advertisementRegistrationInfo, @PathVariable("tokenId") String tokenId)
+    @PutMapping("/advertisement/{formId}")
+    public void updateAdvertisementCertificateByTokenId(@RequestBody List<AdvertisementTaxDTO> advertisementRegistrationInfo, @PathVariable("formId") String formId)
             throws CustomSqlException {
-        log.info("tokenId " + tokenId);
-        advertisementTaxService.updateAdvertisementCertificateByTokenId(advertisementRegistrationInfo, tokenId);
+        log.info("formId " + formId);
+        advertisementTaxService.updateAdvertisementCertificateByTokenId(advertisementRegistrationInfo, formId);
     }
 
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/advertisement")
     @ApiOperation("Add Advertisement Tax Registration")
-    public void addAdvertisementRegistration(HttpServletResponse http, @RequestBody AdvertisementTaxDTO advertisementRegistrationInfo)
+    public void addAdvertisementRegistration(HttpServletResponse http, @RequestBody List<AdvertisementTaxDTO> advertisementRegistrationInfo)
             throws CustomSqlException {
         advertisementTaxService.addAdvertisementRegistration(advertisementRegistrationInfo);
     }

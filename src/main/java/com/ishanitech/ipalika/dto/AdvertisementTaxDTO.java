@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AdvertisementTaxDTO {
 
-
     private int formId ;
     private int elementId ;
     private String elementData ;

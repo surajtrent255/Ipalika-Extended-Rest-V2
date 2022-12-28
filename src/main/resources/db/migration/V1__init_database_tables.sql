@@ -321,6 +321,11 @@ CREATE TABLE IF NOT EXISTS `egovernance_advertisement_tax_log`(
 `status_6_in` TIMESTAMP  DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='egovernance_advertisement_tax_log_table';
 
+
+INSERT INTO egovernance_advertisement_tax_log (token_id, status,status_1_by, status_1_in,status_2_by,status_2_in,status_3_by,status_3_in,status_4_by,status_4_in,status_5_by,status_5_in,status_6_by,status_6_in) VALUES
+('LMC20220212123',0,"suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23","suraj","2022-12-23"),
+('LMC20220212321456',0,"joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23","joshi","2022-12-23");
+
 CREATE TABLE IF NOT EXISTS `egovernance_property_tax_log`(
 `token_id` VARCHAR(50)  NOT NULL,
 `status` INT(11) NOT NULL,

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AdvertisementTaxService {
 
-    void addAdvertisementRegistration(AdvertisementTaxDTO advertisementRegistrationInfo);
+    void addAdvertisementRegistration(List<AdvertisementTaxDTO> advertisementRegistrationInfo);
 
     public void addAllImages(MultipartFile image);
 
@@ -16,7 +16,7 @@ public interface AdvertisementTaxService {
 
     List<AdvertisementTaxDTO> getAdvertisementCertificateByTokenId(String formId);
 
-    void updateAdvertisementCertificateByTokenId(AdvertisementTaxDTO advertisementRegistrationInfo, String formId);
+    void updateAdvertisementCertificateByTokenId(List<AdvertisementTaxDTO> advertisementRegistrationInfo, String formId);
 
     void updateCertificateStatus(String formId, Integer status, Integer formInfoId);
 
